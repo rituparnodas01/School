@@ -1,15 +1,14 @@
+const { Op } = require("sequelize");
 const Section = require('../models/Section');
 const { sendSuccessResponse, sendRecordsResponse, sendErrorResponse } = require('../utils/response')
 const { validationErrorCode, unauthErrorCOde, notfoundErrorCode, successCode, serverErrorCode } = require('../utils/statuscode');
 
 
 var AllSection = async (req, res) => {
-    // const { code, name } =req.body;
     try {
         var data = await Section.findAll({
             attributes: ["code","name"]
         });
-        // console.log(data[0].code, data[0].name);
         sendRecordsResponse(
             res,
             successCode,
@@ -74,8 +73,38 @@ var CreateNewSection = async (req, res) => {
     }
 }
 
+
+var SearchSection = async (req, res) => {
+    const { code, name } =req.body;
+    try {
+        var data = await Section.findAll({
+            attributes: ["code","name"],
+            where:{
+                [Op.or]: [
+                    { code, name }
+                ]
+            }
+        });
+        // console.log(data[0].code, data[0].name);
+        sendRecordsResponse(
+            res,
+            successCode,
+            "data get successfully",
+            data
+        );
+    } catch (error) {
+        console.log(error);
+        return sendErrorResponse(
+            res,
+            serverErrorCode,
+            "Internal server error!",
+        );
+    }
+}
+
 module.exports = {
     AllSection,
     EditSection,
-    CreateNewSection
+    CreateNewSection,
+    SearchSection
 }

@@ -8,6 +8,7 @@ router.post('/Edit', ClasswiseSubjectStructure.Edit)
 router.post('/AllSection', Section.AllSection)
 router.post('/EditSection/:id', Section.EditSection)
 router.post('/CreateNewSection', Section.CreateNewSection)
+router.post('/SearchSection', Section.SearchSection)
 
 
 module.exports = router;
