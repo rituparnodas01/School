@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sub_type\": \"First Language \",\r\n    \"sub\": \"English Literature\"\r\n}",
+					"raw": "{\r\n    // \"sub_type\": \"First Language \",\r\n    \"sub\": \"English Literature\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,7 +126,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"code\" : \"A\",\r\n    \"name\" : \"Section - A\"\r\n}",
+					"raw": "{\r\n    \"code\" : \"A\",\r\n    \"name\" : \"Section - B\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -142,6 +142,44 @@
 					"path": [
 						"tffs",
 						"SearchSection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllGrades",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/tffs/AllGrades",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tffs",
+						"AllGrades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllFaculty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/tffs/AllFaculty",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tffs",
+						"AllFaculty"
 					]
 				}
 			},

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 01:31 PM
+-- Generation Time: Apr 16, 2024 at 01:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -752,10 +752,10 @@ CREATE TABLE `t_rel_class_section_subject_teacher_tagging` (
 --
 
 INSERT INTO `t_rel_class_section_subject_teacher_tagging` (`t_rel_class_section_subject_teacher_tagging_id`, `t_mst_client_id`, `t_rel_class_id`, `t_rel_section_id`, `t_rel_subject_id`, `t_rel_teacher_id`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(12, 1, 1, 1, 19, 1, 'y', '2023-11-30 02:11:44', 105, NULL, NULL),
-(13, 1, 10, 1, 64, 1, 'y', '2023-11-30 02:11:44', 105, NULL, NULL),
-(40, 1, 2, 1, 2, 102, 'y', '2023-12-04 03:27:13', 105, NULL, NULL),
-(41, 1, 12, 1, 14, 102, 'y', '2023-12-04 03:27:13', 105, NULL, NULL);
+(12, 1, 1, 1, 19, 103, 'y', '2023-11-30 02:11:44', 105, NULL, NULL),
+(13, 1, 10, 2, 8, 104, 'y', '2023-11-30 02:11:44', 105, NULL, NULL),
+(40, 1, 2, 3, 2, 105, 'y', '2023-12-04 03:27:13', 105, NULL, NULL),
+(41, 1, 12, 4, 14, 106, 'y', '2023-12-04 03:27:13', 105, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1554,6 +1554,67 @@ INSERT INTO `t_rel_exam_category` (`t_rel_exam_category_id`, `t_mst_client_id`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t_rel_grade`
+--
+
+CREATE TABLE `t_rel_grade` (
+  `t_rel_grade_id` int(11) NOT NULL,
+  `t_mst_client_id` int(11) DEFAULT NULL,
+  `grade_points` enum('G','P') DEFAULT NULL,
+  `display_status` enum('academic','nonacademic','both') DEFAULT 'academic',
+  `name` varchar(100) DEFAULT NULL,
+  `lower_limit` int(11) DEFAULT NULL,
+  `upper_limit` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_rel_grade`
+--
+
+INSERT INTO `t_rel_grade` (`t_rel_grade_id`, `t_mst_client_id`, `grade_points`, `display_status`, `name`, `lower_limit`, `upper_limit`, `created_by`) VALUES
+(1, 1, 'G', 'academic', 'Grade A', 90, 100, 1),
+(2, 1, 'G', 'academic', 'Grade B', 80, 89, 1),
+(3, 1, 'G', 'academic', 'Grade C', 70, 79, 1),
+(4, 1, 'P', 'nonacademic', 'Pass', 50, 69, 1),
+(5, 1, 'P', 'both', 'Passing', 40, 49, 1),
+(6, 1, 'P', 'both', 'Fail', 0, 39, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_rel_grade_structure`
+--
+
+CREATE TABLE `t_rel_grade_structure` (
+  `t_rel_grade_structure_id` bigint(20) UNSIGNED NOT NULL,
+  `t_mst_client_id` int(11) DEFAULT NULL,
+  `t_rel_exam_category_id` int(11) NOT NULL,
+  `t_rel_class_id` int(11) NOT NULL,
+  `t_mst_academic_year_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_rel_grade_structure`
+--
+
+INSERT INTO `t_rel_grade_structure` (`t_rel_grade_structure_id`, `t_mst_client_id`, `t_rel_exam_category_id`, `t_rel_class_id`, `t_mst_academic_year_id`) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 1, 2, 1),
+(3, 1, 1, 3, 1),
+(4, 1, 2, 4, 1),
+(5, 1, 1, 5, 1),
+(6, 1, 2, 6, 1),
+(7, 1, 1, 7, 1),
+(8, 1, 2, 8, 1),
+(9, 1, 1, 9, 1),
+(10, 1, 2, 10, 1),
+(11, 1, 1, 11, 1),
+(12, 1, 2, 12, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `t_rel_personal_attributes_class_tagging`
 --
 
@@ -2191,7 +2252,8 @@ INSERT INTO `t_rel_section` (`t_rel_section_id`, `t_mst_client_id`, `code`, `nam
 (1, 1, 'A', 'Section - A', 'y'),
 (2, 1, 'B', 'Section - B', 'y'),
 (3, 1, 'C', 'Section - C', 'y'),
-(4, 1, 'D', 'Section - D', 'y');
+(4, 1, 'D', 'Section - D', 'y'),
+(5, 1, 'E', 'Section - E', 'y');
 
 -- --------------------------------------------------------
 
@@ -2566,6 +2628,18 @@ ALTER TABLE `t_rel_exam_category`
   ADD PRIMARY KEY (`t_rel_exam_category_id`);
 
 --
+-- Indexes for table `t_rel_grade`
+--
+ALTER TABLE `t_rel_grade`
+  ADD PRIMARY KEY (`t_rel_grade_id`);
+
+--
+-- Indexes for table `t_rel_grade_structure`
+--
+ALTER TABLE `t_rel_grade_structure`
+  ADD PRIMARY KEY (`t_rel_grade_structure_id`);
+
+--
 -- Indexes for table `t_rel_personal_attributes_class_tagging`
 --
 ALTER TABLE `t_rel_personal_attributes_class_tagging`
@@ -2720,6 +2794,12 @@ ALTER TABLE `t_rel_exam_category`
   MODIFY `t_rel_exam_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `t_rel_grade_structure`
+--
+ALTER TABLE `t_rel_grade_structure`
+  MODIFY `t_rel_grade_structure_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `t_rel_personal_attributes_class_tagging`
 --
 ALTER TABLE `t_rel_personal_attributes_class_tagging`
@@ -2741,7 +2821,7 @@ ALTER TABLE `t_rel_personal_attributes_master`
 -- AUTO_INCREMENT for table `t_rel_section`
 --
 ALTER TABLE `t_rel_section`
-  MODIFY `t_rel_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `t_rel_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `t_rel_streams`
