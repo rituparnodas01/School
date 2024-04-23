@@ -33,12 +33,11 @@ const Accordion = () => {
           throw new Error('Failed to fetch data');
         }
         const responseData = await response.json();
-        // console.log("data:",responseData)
+
         const dataFromResponse = responseData.data;
-        // console.log('Dataaa',responseData.data)
+     
         setTableData(responseData.data);
-        // setSearchResults(dataFromResponse); 
-        // setShowSearchResults(true);
+
       } catch (error) {
         console.error('Error:', error);
       }
@@ -66,10 +65,6 @@ const Accordion = () => {
       setData([]);
     }
   };
-  // console.log('tabledata fetchhhh:', tableData);
-
-  // console.log("search",searchResults);
-
 
   const handleReset = () => {
     setCode('');

@@ -1,0 +1,81 @@
+.wrapper {
+  /* width:100px; */
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust spacing between elements */
+  border: 1.5px solid #14bddfd7;
+  width: 98%;
+   /* Add a thin border */
+ /* Add rounded corners */
+}
+
+.label {
+  display: flex;
+  align-items: center; /* Aligns items along the cross axis */
+  margin-bottom: 10px; /* Adds some vertical space between each label/input pair */
+}
+
+.label_items {
+  padding: 8px 20px;
+  margin: right 10px;; /* Adds horizontal space between each label/input pair */
+}
+
+.input_items {
+  margin-left: 10px;
+  padding: 8px 30px;
+  /* Add your specific styling for input items here */
+  width: 200px; /* Adjust the width as needed */
+}
+.btn1{
+  padding: 8px 20px;
+  background-color: rgb(59, 146, 239);
+color: white;
+border: 0px;
+margin-left: 45%;
+}
+.btn1:hover{
+  background-color: rgb(36, 11, 227);
+}
+.btn2:hover{
+  background-color: rgb(216, 36, 12);
+}
+.btn_container{
+  margin-bottom: 15px;
+  align-items: center;
+  padding: 20px;
+  background-color: none;
+}
+.btn2{
+  padding: 8px 20px;
+  margin-left: 10px;
+  border: 0px;
+  background-color: rgb(226, 136, 10);
+color: white;
+}
+.label_items{
+  margin-left: 15%;
+}
+.input_items{
+  margin-right: 5px;
+}
+
+
+.accordionBtn{
+  padding: 20px;
+  background-color: rgb(54, 205, 192);
+  border: none;
+  font-size: medium;
+  color: black;
+  
+}
+.span{
+  color: red;
+}
+
+.btn{
+  align-items: right;
+}
+.custom{
+  background-color: #cfe2ff;
+}

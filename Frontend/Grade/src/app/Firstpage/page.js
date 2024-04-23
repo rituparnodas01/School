@@ -194,15 +194,11 @@ const Firstpage = () => {
                 <td className='td'>{grade.Title}</td>
                 <td className='td'>{grade.class}</td>
                 <td className='td'>{grade.examcategory}</td>
-                <td className='td'>
-  <span className={grade.Status === 'Active' ? 'Active' : 'inactive'}>
-    {grade.Status}
-  </span>
-</td>
-
-
-              </tr>
-    ))}
+                <td className='td'><span className={grade.Status === 'Active' ? 'Active' : 'inactive'}>{grade.Status}
+                </span>
+                </td>
+                </tr>
+                ))}
   </tbody>
 </table>
 

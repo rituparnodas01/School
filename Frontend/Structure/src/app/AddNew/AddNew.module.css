@@ -1,0 +1,36 @@
+
+  .container {
+   
+    background-color: white;
+/* Distributes items evenly along the main axis */
+    align-items: center; /* Aligns items along the cross axis */
+    border: 0.1px solid rgb(199, 191, 191);
+    margin-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+    margin-left: 15px;
+    margin-top: 30px;
+    margin-right: 15px;
+  }
+  
+
+
+  .button{
+    color:#04AA6D ;
+border: 2px solid #04AA6D;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-right: 50px;
+  }
+  .button:hover{
+    background-color: rgb(171, 225, 171);
+    color: white;
+  }
+  
