@@ -20,10 +20,9 @@ function NewAdded() {
       if (!response.ok) {
         throw new Error('Failed to submit data');
       }
-      // Data submitted successfully
-      // You may want to handle the response if needed
+
       console.log('Data submitted successfully');
-      // Clear input fields after successful submission
+
       setCode('');
       setName('');
     } catch (error) {
@@ -32,7 +31,7 @@ function NewAdded() {
   };
 
   const handleCancel = () => {
-    // Clear input fields when cancel button is clicked
+
     setCode('');
     setName('');
   };
