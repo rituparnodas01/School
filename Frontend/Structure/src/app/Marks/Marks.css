@@ -1,0 +1,54 @@
+.container{
+  margin: 20px;
+  padding: 20px;
+  border: none; 
+  border-radius: 10px; 
+  background-color: #f0f0f0;
+}
+.table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+
+  .header th{
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    background-color:gray;
+    color: white;
+  }
+
+  .tr {
+    border: 0.3px solid #ddd;
+  }
+  
+
+  .td {
+    border: 0.3px solid gray;
+   
+    
+  }
+  
+
+  .td {
+    position: relative; 
+  }
+  
+  .select {
+    padding: 8px;
+    width: 100%; 
+ 
+    box-sizing: border-box;
+  }
+  .td {
+    padding: 8px;
+    margin: 0;
+    border: none; 
+  }
+  .accordion_button{
+    background-color: rgb(117,224,224);
+  }
+  .custom{
+    background-color: #cfe2ff;
+  }

@@ -44,6 +44,7 @@ const Firstpage = () => {
 
   const handleSearch = () => {
     
+    
   };
 
   const handleReset = () => {

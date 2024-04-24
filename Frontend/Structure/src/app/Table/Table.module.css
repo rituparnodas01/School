@@ -1,0 +1,70 @@
+
+.table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  left: 10px;
+  right:10px;
+  background-color: white;
+}
+
+/* Define styles for table headers */
+.header th {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  background-color:gray;
+  color: white;
+}
+
+/* Define styles for table rows */
+.tr {
+  border: 0.3px solid #ddd;
+}
+
+/* Define styles for table data cells */
+.td {
+  border: 0.3px solid gray;
+  padding: 7px;
+  text-align: left;
+}
+.button_marks{
+  margin-left: 10px;
+  margin-right: 2px;
+  color: purple;
+  border: 1px solid purple;
+}
+.button_edit{
+  color:orange;
+  border: 1px solid orange;
+}
+.button_edit:hover{
+  color: white;
+  background-color: orange;
+}
+.button_marks:hover{
+  color: white;
+  background-color:purple;
+}
+.tr td:nth-child(1) {
+ width:20%
+}
+.tr td:nth-child(2) {
+  width:40%
+ }
+ .tr td:nth-child(3) {
+  width:40%
+ }
+ .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  padding: 0 15px; /* Adjust the padding as needed */
+}
+.pagination{
+margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+   /* Adjust margin as needed */
+}
