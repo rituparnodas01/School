@@ -1,0 +1,195 @@
+.whole-container{
+    width: 98%; 
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;  
+    background-color:whitesmoke;
+}
+.wrapper {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust spacing between elements */
+    border: 1.5px solid #14bddfd7;
+    width: 98%;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center; /* Align items along the cross axis */
+  }
+  
+  .label_items {
+    margin-top: 30px;
+    padding: 8px 20px;
+    margin-right: 10px; /* Adds horizontal space between each label/input pair */
+  }
+  
+  .input_items {
+    margin-left: 10px;
+    padding: 8px 30px;
+    width: 200px; /* Adjust the width as needed */
+  }
+  
+  .btn_container {
+margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin-bottom: 15px;
+  }
+  
+  .btn1,
+  .btn2 {
+    padding: 8px 20px;
+    margin-left: 10px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn1 {
+    background-color: rgb(59, 146, 239);
+  }
+  
+  .btn2 {
+    background-color: rgb(226, 136, 10);
+  }
+  
+  .btn1:hover {
+    background-color: rgb(36, 11, 227);
+  }
+  
+  .btn2:hover {
+    background-color: rgb(216, 36, 12);
+  }
+  
+  
+  
+  .span {
+    color: red;
+  }
+  
+  .add-new{
+    background-color: white;
+    border: 0.1px solid rgb(199, 191, 191);
+    margin-left: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px; 
+    margin-right: none;
+  }
+  
+  .button {
+    color: #04aa6d;
+    border: 2px solid #04aa6d;
+    padding: 5px 15px;
+    font-size: 16px;
+    margin-right: 50px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: rgb(72, 137, 72);
+    color: white;
+  }
+  
+  .header {
+    font-size: large;
+    margin-left: 20px;
+  }
+  .add-new{
+    width: 98.2%;
+  }
+  .custom{
+    background-color:#cfe2ff;
+  }
+  
+.table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  left: 10px;
+  right:10px;
+  background-color: white;
+}
+
+/* Define styles for table headers */
+.header th {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  background-color:gray;
+  color: white;
+}
+
+/* Define styles for table rows */
+.tr {
+  border: 0.3px solid #ddd;
+}
+
+/* Define styles for table data cells */
+.td {
+  border: 0.3px solid gray;
+  padding: 7px;
+  text-align: left;
+}
+
+.button_edit{
+  margin-left: 30px;
+  color:orange;
+  border: 1px solid orange;
+}
+.button_edit:hover{
+  color: white;
+  background-color: orange;
+}
+.button_marks:hover{
+  color: white;
+  background-color:purple;
+}
+/* .tr td:nth-child(1) {
+ width:10%
+} */
+/* .tr td:nth-child(2) {
+  width:40%
+ }
+ .tr td:nth-child(3) {
+  width:40%
+ } */
+ .wrapper-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 0 15px; 
+}
+.pagination{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.input_isfinal{
+  margin-left: 80px;
+}
+.button_add{
+  margin-left: 5px;
+  color:orange;
+  border: 1px solid orange;
+}
+.button_show{
+  margin-left: 5px;
+  color:rgb(121, 197, 244);
+  border: 1px solid rgb(121, 197, 244);
+}
+.button_add:hover{
+  color: white;
+  background-color: orange;
+}
+.button_show:hover{
+  color: white;
+  background-color:rgb(133, 133, 243);
+}

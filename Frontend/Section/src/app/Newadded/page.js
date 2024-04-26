@@ -7,7 +7,7 @@ import styles from "./Newadded.module.css"
 function NewAdded() {
   const [code, setCode] = useState('');
   const [name, setName] = useState('');
-
+  const [submitted, setSubmitted] = useState(false);
   const handleSubmit = async () => {
     try {
       const response = await fetch('http://localhost:4000/tffs/CreateNewSection', {
@@ -22,14 +22,18 @@ function NewAdded() {
       }
 
       console.log('Data submitted successfully');
-
+      setSubmitted(true);
       setCode('');
       setName('');
+      window.location.href = '/';
     } catch (error) {
       console.error('Error:', error);
     }
-  };
 
+  };
+  setTimeout(() => {
+    setSubmitted(false);
+  }, 2000000000);
   const handleCancel = () => {
 
     setCode('');
@@ -38,6 +42,7 @@ function NewAdded() {
 
   return (
     <div className={styles.section_form}>
+    
       <div className={styles.redbox}>
         (*) indicates Mandatory Fields.
       </div>
@@ -74,6 +79,11 @@ function NewAdded() {
           <RxCross2 /> Cancel
         </button>
       </div>
+      {submitted && (
+    <div className={styles.success_message}>
+      <p>Data submitted successfully!</p>
+    </div>
+  )}
     </div>
   );
 }

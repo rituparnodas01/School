@@ -34,7 +34,7 @@ const Accordion = () => {
         }
         const responseData = await response.json();
 
-        const dataFromResponse = responseData.data;
+        // const dataFromResponse = responseData.data;
      
         setTableData(responseData.data);
 
@@ -95,7 +95,7 @@ const Accordion = () => {
                       <input
                         className={styles.input_items}
                         type="text"
-                        placeholder='D'
+                        placeholder='A'
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
                       />
