@@ -9,6 +9,7 @@ import styles from './Table.module.css'; // Import CSS file for styling
 
 const Table = (props) => {
   const [data, setData] = useState([]);
+  console.log("props",props)
   const totalPages = 10;
   return (
     <div className={styles.wrapper}>

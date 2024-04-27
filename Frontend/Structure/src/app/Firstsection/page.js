@@ -21,30 +21,30 @@ const FirstSection = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
-    if (!code) {
-      fetchData();
-    } else {
-      try {
-        const response = await fetch('http://localhost:4000/tffs/SearchSection', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ academicyear: code, class: classValue }),
-        });
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const responseData = await response.json();
+  //   if (!code) {
+  //     fetchData();
+  //   } else {
+  //     try {
+  //       const response = await fetch('http://localhost:4000/tffs/SearchSection', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({ academicyear: code, class: classValue }),
+  //       });
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch data');
+  //       }
+  //       const responseData = await response.json();
 
-        const dataFromResponse = responseData.data;
+  //       // const dataFromResponse = responseData.data;
      
-        setTableData(responseData.data);
+  //       setTableData(responseData.data);
 
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //     }
+  //   }
   };
   const fetchData = async () => {
     try {
@@ -61,10 +61,11 @@ const FirstSection = () => {
       const responseData = await response.json();
       setTableData(responseData.data);
       setIsLoading(false);
+      console.log('response',responseData.data)
     } catch (error) {
       console.error('Error fetching data:', error);
       setIsLoading(false);
-      setData([]);
+      // setData([]);
     }
   };
   const handleReset = () => {

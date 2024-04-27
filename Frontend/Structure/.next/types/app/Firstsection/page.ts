@@ -1,4 +1,4 @@
-// File: D:\School\Frontend\Structure\src\app\Firstsection\page.js
+// File: F:\react_fundamenta\School\Frontend\Structure\src\app\Firstsection\page.js
 import * as entry from '../../../../src/app/Firstsection/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
