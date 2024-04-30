@@ -1,6 +1,6 @@
 
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import Link from 'next/link';
 import { GrEdit } from "react-icons/gr";
 import Pagination from '../Pagination/page';
@@ -8,7 +8,7 @@ import styles from './Table.module.css';
 
 const Table = (props) => {
   const [data, setData] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+
   const totalPages = 10; 
 
   console.log("table data--->>hiiii", props.data)
@@ -66,7 +66,7 @@ const Table = (props) => {
               {props.data?.map((item, index) => (
                 <tr className={styles.tr} key={index}>
                   <td className={styles.td}>
-                  <Link href={`/Edit?id=${item.id}`}>
+                  <Link href={`/Edit?id=${item.t_rel_section_id}`}>
                       <button className={styles.button_edit}>
                         <GrEdit />
                       </button>

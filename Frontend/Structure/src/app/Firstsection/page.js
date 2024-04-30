@@ -11,10 +11,8 @@ import "../BootstrapClient"
 import Table from '../Table/page';
 import AddNew from '../AddNew/page';
 const FirstSection = () => {
-  const [search, setSearch] = useState('');
+
   const [classValue, setClassValue] = useState('');
-
-
   const [code, setCode] = useState('');
   const [tableData, setTableData] = useState([]);
 
@@ -25,19 +23,21 @@ const FirstSection = () => {
       fetchData();
     } else {
       try {
-        const response = await fetch('http://localhost:4000/tffs/SearchSection', {
+        const responseSearch = await fetch('http://localhost:4000/tffs/SSS', {
+         
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ academicyear: code, class: classValue }),
+          body: JSON.stringify({ code,classValue }),
         });
-        if (!response.ok) {
+        console.log("Search",responseSearch);
+        if (!responseSearch.ok) {
           throw new Error('Failed to fetch data');
         }
-        const responseData = await response.json();
+        const responseData = await responseSearch.json();
 
-        const dataFromResponse = responseData.data;
+        // const dataFromResponse = responseData.data;
      
         setTableData(responseData.data);
 
@@ -49,7 +49,7 @@ const FirstSection = () => {
   const fetchData = async () => {
     try {
       setIsLoading(true)
-      const response = await fetch('http://localhost:4000/tffs/AllClass', {
+      const response = await fetch('http://localhost:4000/tffs/SS', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,6 +61,7 @@ const FirstSection = () => {
       const responseData = await response.json();
       setTableData(responseData.data);
       setIsLoading(false);
+      console.log("tabledataaa::",tableData)
     } catch (error) {
       console.error('Error fetching data:', error);
       setIsLoading(false);
@@ -69,7 +70,7 @@ const FirstSection = () => {
   };
   const handleReset = () => {
     
-    setSearch('');
+    setCode('');
     setClassValue('');
   };
   useEffect(() => {
@@ -94,8 +95,8 @@ const FirstSection = () => {
                 className='input_items'
                 type="text"
                 placeholder="2020-21"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
               />
             </label>
             <label className='label_items'>

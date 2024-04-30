@@ -58,8 +58,7 @@ border: 2px solid #04AA6D;
   gap: 10px; /* Adjust spacing between elements */
   border: 1.5px solid #14bddfd7;
   width: 98%;
-   /* Add a thin border */
- /* Add rounded corners */
+
 }
 
 .label {
@@ -130,6 +129,7 @@ color: white;
 }
 .custom{
   background-color: #cfe2ff;
+  
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/app/Pagination/Pagination.module.css ***!
