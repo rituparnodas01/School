@@ -10,11 +10,11 @@ padding: 3rem; /* Adjust padding as needed */
   
 }
 .wrapper {
-    /* width:100px; */
+
     margin-left: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adjust spacing between elements */
+    gap: 10px;
     border: 1px solid lightgray; 
     width: 98%;
 

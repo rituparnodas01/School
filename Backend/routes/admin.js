@@ -13,11 +13,12 @@ router.post('/ViewSS', ClasswiseSubjectStructure.ViewSS)
 router.post('/EditSS', ClasswiseSubjectStructure.EditSS)
 
 router.post('/AllSection', Section.AllSection)
-router.post('/EditSection/:id', Section.EditSection)
+router.post('/EditSection', Section.EditSection)
 router.post('/CreateNewSection', Section.CreateNewSection)
 router.post('/SearchSection', Section.SearchSection)
 
 router.post('/AllGrades', Grade.AllGrades)
+router.post('/SG', Grade.SearchGrades)
 
 router.post('/AllFaculty', Faculty.AllFaculty)
 router.post('/SearchFaculty', Faculty.SearchFaculty)

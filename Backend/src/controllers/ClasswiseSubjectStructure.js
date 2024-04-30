@@ -61,13 +61,62 @@ var SubwiseStructure = async (req, res) => {
             "Internal server error!",
         );
     }
-}
+};
+
+// var SearchSubwiseStructure = async (req, res) => {
+
+//     try {
+
+//         const { year, std } = req.body
+
+//         var data = await AcademicDetails.findAll({
+//             attributes: [
+//                 [sequelize.literal("AcademicYear.code"), "academicyear"],
+//                 [sequelize.literal("Class.name"), "class"]
+//             ],
+//             include: [
+//                 {
+//                     model: AcademicYear,
+//                     attributes: [],
+//                     where: {
+//                         year
+//                     }
+//                 },
+//                 {
+//                     model: Class,
+//                     attributes: [],
+//                     where: {
+//                         name: std
+//                     }
+//                 }
+//             ]
+
+//         });
+//         sendRecordsResponse(
+//             res,
+//             successCode,
+//             "data get successfully",
+//             data
+//         );
+//     } catch (error) {
+//         console.log(error);
+//         return sendErrorResponse(
+//             res,
+//             serverErrorCode,
+//             "Internal server error!",
+//         );
+//     }
+// };
 
 var SearchSubwiseStructure = async (req, res) => {
-
     try {
+        const { year, std } = req.body;
+        var academicYearWhere = {};
+        var classWhere = {};
 
-        const { year, std } = req.body
+        // Define where conditions for each model separately
+        if (year) academicYearWhere.year = year;
+        if (std) classWhere.name = std;
 
         var data = await AcademicDetails.findAll({
             attributes: [
@@ -78,20 +127,16 @@ var SearchSubwiseStructure = async (req, res) => {
                 {
                     model: AcademicYear,
                     attributes: [],
-                    where: {
-                        year
-                    }
+                    where: academicYearWhere
                 },
                 {
                     model: Class,
                     attributes: [],
-                    where: {
-                        name: std
-                    }
+                    where: classWhere
                 }
             ]
-
         });
+
         sendRecordsResponse(
             res,
             successCode,
@@ -106,7 +151,7 @@ var SearchSubwiseStructure = async (req, res) => {
             "Internal server error!",
         );
     }
-}
+};
 
 var SubMarks = async (req, res) => {
 
@@ -157,7 +202,7 @@ var SubMarks = async (req, res) => {
             "Internal server error!",
         );
     }
-}
+};
 
 var ViewSS = async (req, res) => {
     try {
@@ -210,11 +255,66 @@ var ViewSS = async (req, res) => {
             "Internal server error!",
         );
     }
-}
+};
+
+// var EditSS = async (req, res) => {
+//     try {
+//         const { id, name, t_rel_subject_id } = req.body;
+//         const data = await ClassSubject.update(
+//             { t_rel_subject_id },
+//             {
+//                 where: { t_rel_class_subject_id: id },
+//                 include: [
+//                     {
+//                         model: AcademicYear,
+//                         attributes: [],
+//                     },
+//                     {
+//                         model: Class,
+//                         attributes: [],
+//                         where: { name },
+//                     },
+//                     {
+//                         model: SubjectType,
+//                         attributes: [],
+//                     },
+//                     {
+//                         model: Subject,
+//                         attributes: [],
+//                     },
+//                 ],
+//             }
+//         );
+//         sendRecordsResponse(
+//             res,
+//             successCode,
+//             "Data updated successfully",
+//             data
+//         );
+//     } catch (error) {
+//         console.log(error);
+//         return sendErrorResponse(
+//             res,
+//             serverErrorCode,
+//             "Internal server error!"
+//         );
+//     }
+// };
+
 
 var EditSS = async (req, res) => {
     try {
         const { id, name, t_rel_subject_id } = req.body;
+
+        // Null validation for id, name, and t_rel_subject_id
+        if (!id || !name || !t_rel_subject_id) {
+            return sendErrorResponse(
+                res,
+                validationErrorCode,
+                "ID, name, and t_rel_subject_id are required fields."
+            );
+        }
+
         const data = await ClassSubject.update(
             { t_rel_subject_id },
             {
@@ -257,6 +357,7 @@ var EditSS = async (req, res) => {
 };
 
 
+
 module.exports = {
     SubwiseStructure,
     SearchSubwiseStructure,
@@ -264,4 +365,3 @@ module.exports = {
     ViewSS,
     EditSS
 }
-

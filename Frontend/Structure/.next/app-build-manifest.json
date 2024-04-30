@@ -7,10 +7,29 @@
       "static/chunks/app/layout.js"
     ],
     "/page": [
+<<<<<<< HEAD
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
+=======
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/Edit/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Edit/page.css",
+      "static/chunks/app/Edit/page.js"
+    ],
+    "/Marks/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Marks/page.css",
+      "static/chunks/app/Marks/page.js"
+>>>>>>> 6ed87c8d3ea93939d5b96b2f0f8f34163c03b220
     ]
   }
 }

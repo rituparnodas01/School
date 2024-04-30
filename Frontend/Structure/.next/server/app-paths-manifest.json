@@ -1,4 +1,9 @@
 {
   "/page": "app/page.js",
+<<<<<<< HEAD
   "/favicon.ico/route": "app/favicon.ico/route.js"
+=======
+  "/Edit/page": "app/Edit/page.js",
+  "/Marks/page": "app/Marks/page.js"
+>>>>>>> 6ed87c8d3ea93939d5b96b2f0f8f34163c03b220
 }
