@@ -56,8 +56,8 @@ const Firstpage = () => {
   return (
 <div className='whole-container'>
     <div className='wrapper'>
-  <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
+  <div class="accordion first_section" id="accordionExample">
+  <div class="accordion-item first_heading">
     <h2 className="accordion-header" id="headingOne">
       <button class="accordion-button custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <span>Search Faculty</span>
