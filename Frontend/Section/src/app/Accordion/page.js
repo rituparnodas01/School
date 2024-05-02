@@ -79,11 +79,18 @@ const Accordion = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className="accordion" id="accordionExample">
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingOne">
-              <button className="accordion-button accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <span>Search Section</span>
+      <div className={`accordion ${styles.first_section}`} id="accordionExample">
+          <div className={`accordion-item ${styles.first_heading}`}>
+            <h2 className="accordion-header">
+              <button
+                className={`accordion-button ${styles.custom}`}
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                <h5>Search Academic Year</h5>
               </button>
             </h2>
             <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
